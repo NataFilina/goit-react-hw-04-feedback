@@ -20,6 +20,8 @@ export const App = () => {
       case 'bad':
         setBad(prevState => prevState + 1);
         break;
+      default:
+        return;
     }
   };
 
@@ -37,7 +39,6 @@ export const App = () => {
         onLeaveFeedback={handleLeaveFeedback}
       />
       <Statistics
-        // state={this.state}
         good={good}
         neutral={neutral}
         bad={bad}
