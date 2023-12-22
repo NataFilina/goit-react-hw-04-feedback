@@ -9,8 +9,6 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const feedbackOptions = ['good', 'bad', 'neutral'];
-
   const handleLeaveFeedback = event => {
     switch (event.target.textContent) {
       case 'good':
@@ -38,7 +36,7 @@ export const App = () => {
   return (
     <Section title="Please leave feedback">
       <FeedbackOptions
-        options={feedbackOptions}
+        options={Object.keys({ good, neutral, bad })}
         onLeaveFeedback={handleLeaveFeedback}
       />
       <Statistics
